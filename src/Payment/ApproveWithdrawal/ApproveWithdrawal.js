@@ -7,8 +7,8 @@ import ButtonLoader from "../../components/ButtonLoader/ButtonLoader";
 import useRedirectLoggedOutUser from "../../customHook/useRedirectLoggedOutUser";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const WITHDRAW_ONE_USER = `${BACKEND_URL}/api/withDraw/get-withdrawal`;
-const APPROVAL = `${BACKEND_URL}/api/withDraw/approve`;
+const WITHDRAW_ONE_USER = `${BACKEND_URL}api/withDraw/get-withdrawal`;
+const APPROVAL = `${BACKEND_URL}api/withDraw/approve`;
 
 const WithdrawalDetails = () => {
   const { id } = useParams();
