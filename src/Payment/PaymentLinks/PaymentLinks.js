@@ -52,12 +52,12 @@ const PaymentLinks = () => {
           <p className="depoPay">Pending Withdrawal</p>
         </NavLink>
       </AdminAuthorLink>
-      <NavLink to="/deposit-payment">
+      {/* <NavLink to="/deposit-payment">
         <p className="iconPay">
           <FaCrown />
         </p>
         <p className="depoPay">Ranking Barge</p>
-      </NavLink>
+      </NavLink> */}
       <NavLink to="/referrals">
         <p className="iconPay">
           <FaUserFriends />
