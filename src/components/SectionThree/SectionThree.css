@@ -1,0 +1,127 @@
+/* General Section Styles */
+.sectionThree {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 2rem;
+    background-color: #2e8b57;
+    color: #fff;
+  }
+  
+  .sectionHeader {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .sectionHeader h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+  
+  .sectionHeader p {
+    font-size: 1.2rem;
+    color: #e0e0e0;
+    margin-bottom: 1.5rem;
+  }
+  
+  .btn-link {
+    color: #e0e0e0;
+    background-color: transparent;
+    padding: 0.75rem 2rem;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 50px;
+    transition: 0.3s;
+  }
+  
+  .btn-link:hover {
+    border: 2px solid #4caf50;
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  /* Card Container */
+  .cardContainer {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .benefitCard {
+    background-color: #333;
+    border-radius: 10px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 350px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: 0.3s ease;
+  }
+  
+  .benefitCard:hover {
+    transform: translateY(-10px);
+  }
+  
+  .benefitCard .inAset {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .benefitCard .premium {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+  }
+  
+  .benefitCard .premium h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .benefitCard .premium svg {
+    font-size: 1.5rem;
+    color: #fff;
+  }
+  
+  .benefitCard .features p {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .benefitCard .features svg {
+    margin-right: 0.5rem;
+    color: #4caf50;
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .sectionHeader h1 {
+      font-size: 2rem;
+    }
+  
+    .sectionHeader p {
+      font-size: 1rem;
+    }
+  
+    .cardContainer {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+  
+    .benefitCard {
+      width: 90%;
+      padding: 1.5rem;
+    }
+  
+    .btn-link {
+      font-size: 1rem;
+    }
+  }
+  
