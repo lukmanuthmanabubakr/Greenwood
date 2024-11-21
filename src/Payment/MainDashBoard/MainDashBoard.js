@@ -162,8 +162,8 @@ import { NameOfUser } from "../../Pages/Profile/UserProfile/UserProfile";
 import DashLoader from "../DashLoader/DashLoader";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-export const GET_ONE_USER = `${BACKEND_URL}/api/users`;
-export const CHECK_MATURITY = `${BACKEND_URL}/api/invest/deposit-maturity`;
+export const GET_ONE_USER = `${BACKEND_URL}api/users`;
+export const CHECK_MATURITY = `${BACKEND_URL}api/invest/deposit-maturity`;
 
 const MainDashBoard = () => {
   const [name, setName] = useState("");
@@ -192,7 +192,7 @@ const MainDashBoard = () => {
     try {
       await axios.get(CHECK_MATURITY);
       const response = await axios.get(`${GET_ONE_USER}/getUser`);
-      console.log("Full Response:", response.data);
+      // console.log("Full Response:", response.data);
 
       setName(response.data.name);
       setBalance(response.data.balance);
