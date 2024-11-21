@@ -10,7 +10,7 @@ import useRedirectLoggedOutUser from "../../customHook/useRedirectLoggedOutUser"
 import { useNavigate } from "react-router-dom";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const GET_ADMIN_WALLET = `${BACKEND_URL}/api/payments`;
+const GET_ADMIN_WALLET = `${BACKEND_URL}api/payments`;
 
 const Deposit = ({ token }) => {
   const [amount, setAmount] = useState("");
