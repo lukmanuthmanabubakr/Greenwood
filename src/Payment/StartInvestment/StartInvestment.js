@@ -9,9 +9,9 @@ import "./StartInvestment.css";
 import { useSelector } from "react-redux";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const FETCH_PLANS = `${BACKEND_URL}/api/invest/plans`;
-const GET_ONE_USER = `${BACKEND_URL}/api/users/getUser`;
-const START_PAYMENT = `${BACKEND_URL}/api/invest/start-invest`;
+const FETCH_PLANS = `${BACKEND_URL}api/invest/plans`;
+const GET_ONE_USER = `${BACKEND_URL}api/users/getUser`;
+const START_PAYMENT = `${BACKEND_URL}api/invest/start-invest`;
 
 const StartInvestment = ({ token }) => {
   const [amount, setAmount] = useState("");
