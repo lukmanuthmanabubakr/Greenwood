@@ -10,8 +10,8 @@ import useRedirectLoggedOutUser from "../../customHook/useRedirectLoggedOutUser"
 import { useNavigate } from "react-router-dom";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const GET_ONE_USER = `${BACKEND_URL}/api/users/getUser`;
-const WITHDRAW_REQUEST_URL = `${BACKEND_URL}/api/withDraw/create`;
+const GET_ONE_USER = `${BACKEND_URL}api/users/getUser`;
+const WITHDRAW_REQUEST_URL = `${BACKEND_URL}api/withDraw/create`;
 
 const Withdraw = ({ token }) => {
   const [amount, setAmount] = useState("");
