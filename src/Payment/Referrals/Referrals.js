@@ -6,8 +6,8 @@ import "react-toastify/dist/ReactToastify.css"; // Import Toastify styles
 import "./Referrals.css";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const GET_ONE_USER = `${BACKEND_URL}/api/users/getUser`;
-const REFERRALS = `${BACKEND_URL}/api/users/referrals`;
+const GET_ONE_USER = `${BACKEND_URL}api/users/getUser`;
+const REFERRALS = `${BACKEND_URL}api/users/referrals`;
 
 const Referrals = ({ token }) => {
   useRedirectLoggedOutUser("/login");
