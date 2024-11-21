@@ -7,6 +7,7 @@ import { validateEmail } from "../../../redux/features/auth/authService";
 import { toast } from "react-toastify";
 import { forgotPassword, RESET } from "../../../redux/features/auth/authSlice";
 import Loader from "../../../components/Loader/Loader";
+import ButtonLoader from "../../../components/ButtonLoader/ButtonLoader";
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
@@ -36,7 +37,6 @@ const ForgotPassword = () => {
 
   return (
     <>
-      {isLoading && <Loader />}
       <div className="forgotPassAspect">
         <div className="loginSvg">
           <img src={fPass} alt="Login" />
@@ -53,9 +53,9 @@ const ForgotPassword = () => {
               onChange={(e) => setEmail(e.target.value)}
               className="emailInput"
             />
-            <button className="submit" type="submit">
+            <ButtonLoader className="submit" type="submit" isLoading={isLoading}>
               Get Reset Email
-            </button>
+            </ButtonLoader>
           </form>
           <div className="UserDontHaveAccount">
             <p>Already have an account ?</p>
