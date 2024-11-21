@@ -77,7 +77,7 @@ const ResetPassword = () => {
               value={confirmPassword}
               onChange={handleInputChange}
             />
-            <ButtonLoader className="submit" type="submit">
+            <ButtonLoader className="submit" type="submit" isLoading={isLoading}>
               Reset Password
             </ButtonLoader>
           </form>
