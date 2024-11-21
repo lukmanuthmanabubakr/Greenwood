@@ -11,7 +11,7 @@ import useRedirectLoggedOutUser from "../../customHook/useRedirectLoggedOutUser"
 import "./InvestmentStatus.css";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-export const GET_USER_INVESTMENT_HISTORY = `${BACKEND_URL}/api/invest`;
+export const GET_USER_INVESTMENT_HISTORY = `${BACKEND_URL}api/invest`;
 
 const InvestmentStatus = () => {
   const [investments, setInvestments] = useState([]);
