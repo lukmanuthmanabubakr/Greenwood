@@ -18,6 +18,8 @@
 .no-data-text {
   color: #006400; /* Dark green */
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .withdrawal-list {
