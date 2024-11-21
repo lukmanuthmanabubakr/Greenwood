@@ -6,7 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "./PendingWithdrawals.css";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const GET_PENDING_WITHDRAWALS_URL = `${BACKEND_URL}/api/withDraw/pending`;
+const GET_PENDING_WITHDRAWALS_URL = `${BACKEND_URL}api/withDraw/pending`;
 
 const PendingWithdrawals = () => {
   const [withdrawals, setWithdrawals] = useState([]);
