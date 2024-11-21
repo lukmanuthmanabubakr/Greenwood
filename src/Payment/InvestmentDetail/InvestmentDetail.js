@@ -4,7 +4,7 @@ import axios from "axios";
 import "./InvestmentDetail.css";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-export const GET_USER_INVESTMENT_HISTORY = `${BACKEND_URL}/api/invest`;
+export const GET_USER_INVESTMENT_HISTORY = `${BACKEND_URL}api/invest`;
 
 const InvestmentDetail = () => {
   const { investmentId } = useParams();
