@@ -128,7 +128,7 @@ const Login = () => {
             Login
           </ButtonLoader>
           </form>
-          <NavLink to="/forgot-password" className="forgotPassword">
+          <NavLink to="/forgot" className="forgotPassword">
             Forgot Password
           </NavLink>
           <div className="UserDontHaveAccount">
