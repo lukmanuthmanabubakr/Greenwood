@@ -60,7 +60,7 @@ const Deposit = ({ token }) => {
         <p>5. Click on "Deposit Payment"</p>
         <p>6. Wait for confirmation of your payment</p>
         <p>7. Once your payment is confirmed via email</p>
-        <p>8. Congratulations you can now start investing</p>
+        <p>8. Congratulations you can now start investing.</p>
       </div>
       <div className="warning-section">
         <span>
