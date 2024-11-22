@@ -27,9 +27,9 @@ const Verify = () => {
       <div className="verifyAccount-container">
         <div className="verifyAccount-card">
           <FaCheckCircle className="verify-icon animated-icon" />
-          <h2>Account Verified!</h2>
+          <h2>Account Verification!</h2>
           <p>
-            Your account has been successfully verified. Click the button below
+            Your account will be verified, Once you Click the button below
             to proceed!
           </p>
           <ButtonLoader
@@ -37,7 +37,7 @@ const Verify = () => {
             className="verify-button"
             isLoading={isLoading}
           >
-            Proceed to Dashboard
+            Verify Email
           </ButtonLoader>
         </div>
       </div>

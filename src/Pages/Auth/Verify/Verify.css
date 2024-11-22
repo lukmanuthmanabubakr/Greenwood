@@ -75,3 +75,30 @@
     transform: translateY(0);
   }
 }
+
+@media only screen and (max-width: 700px) {
+  .verifyAccount-card h2 {
+    font-size: 18px;
+    color: var(--green-dark);
+    margin-bottom: 12px;
+  }
+  .verifyAccount-card p {
+    color: var(--text-dark);
+    font-size: 15px;
+    margin-bottom: 25px;
+  }
+  .verify-button {
+    padding: 12px 24px;
+    background: linear-gradient(135deg, var(--green-dark), var(--green-primary)); /* Green gradient for the button */
+    color: var(--text-light);
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    box-shadow: 0px 4px 12px rgba(45, 106, 79, 0.3);
+    display: inline-block;
+    margin: 0 auto;
+  }
+}
