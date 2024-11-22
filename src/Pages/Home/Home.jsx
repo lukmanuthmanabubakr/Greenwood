@@ -49,8 +49,8 @@ const Home = () => {
                   tools and resources to help you grow your wealth efficiently
                   and confidently.
                 </p>
-                <NavLink to="/register" className="dashboard-link">
-                  Register
+                <NavLink to="/dashboard" className="dashboard-link">
+                  Dashboard
                 </NavLink>
               </div>
               <div className="image-content">
