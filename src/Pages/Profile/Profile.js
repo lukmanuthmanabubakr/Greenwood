@@ -23,11 +23,11 @@ const Profile = () => {
     setActiveContent(content);
   };
 
-  const logoutUser = async () =>  {
+  const logoutUser = async () => {
     dispatch(RESET());
     await dispatch(logout());
-    navigate("/login")
-};
+    navigate("/login");
+  };
 
   return (
     <div className="profileContainer">
