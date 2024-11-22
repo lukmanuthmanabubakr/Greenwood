@@ -85,7 +85,7 @@ const UserProfile = () => {
           { method: "post", body: image }
         );
         const imgData = await response.json();
-        // console.log(imgData);
+        console.log(imgData);
         imageURL = imgData.url.toString();
       }
       // Save profile to MongoDB
@@ -120,7 +120,7 @@ const UserProfile = () => {
 
   return (
     <>
-    {/* {!isLoading && profile.isVerified === false && <Notification />} */}
+    {!isLoading && profile.isVerified === false && <Notification />}
     <div className="userProfile-container">
         <h2 className="profile-header">User Profile</h2>
         {user && (

@@ -3,7 +3,7 @@ import axios from "axios";
 // Base URL for the backend API
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
-export const PAYMENT_URL = `${BACKEND_URL}api`;
+export const PAYMENT_URL = `${BACKEND_URL}/api`;
 
 // Check admin wallet
 export const getAdminWallet = async () => {

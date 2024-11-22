@@ -4,7 +4,6 @@ import Aboutss from "../../Assets/aboutuuuuusss.jpeg";
 import missions from "../../Assets/Missions.jpeg";
 import "./About.css";
 import Footer from "../../components/Footer/Footer";
-import BackToTop from "../../BackToTop/BackToTop";
 
 
 const About = () => {
@@ -62,8 +61,6 @@ const About = () => {
       </div>
     </div>
     <Footer />
-    <BackToTop />
-
     </>
   );
 };

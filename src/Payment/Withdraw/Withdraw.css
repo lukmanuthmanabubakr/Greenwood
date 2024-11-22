@@ -43,6 +43,7 @@
   color: var(--login-input-text);
   background: var(--login-input-bg);
   border-radius: 50px;
+  border-radius: 50px;
   font-size: 1rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
   -webkit-border-radius: 50px;
@@ -121,8 +122,5 @@
 @media (min-width: 768px) {
   .container-withdraw {
     margin-top: 100px; /* Adds more space at the top for larger screens */
-  }
-  .balance-info{
-    font-size: 0.8rem;
   }
 }

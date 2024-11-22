@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom'; // Assuming you're using React Router for navigation
 import './PrivacyPolicy.css'; // Adjust the path as necessary
 import Footer from '../../components/Footer/Footer';
-import BackToTop from '../../BackToTop/BackToTop';
 
 const PrivacyPolicy = () => {
   return (
@@ -56,7 +55,6 @@ const PrivacyPolicy = () => {
       <p>GreenWood does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you believe your child has provided this kind of information on our website, please contact us, and we will promptly remove it from our records.</p>
     </div>
     <Footer />
-    <BackToTop />
    </>
   );
 };

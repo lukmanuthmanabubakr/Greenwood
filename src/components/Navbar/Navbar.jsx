@@ -21,17 +21,11 @@ const Navbar = () => {
   const goHome = () => {
     navigate("/");
   };
-  // const logoutUser = async () => {
-  //   dispatch(RESET());
-  //   await dispatch(logout());
-  //   navigate("/login");
-  // };
-
-  const logoutUser = async () =>  {
+  const logoutUser = async () => {
     dispatch(RESET());
     await dispatch(logout());
-    navigate("/")
-};
+    navigate("/login");
+  };
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -95,20 +89,20 @@ const Navbar = () => {
                 <ShowOnLogin>
                   <NavLink to="/dashboard">Dashboard</NavLink>
                 </ShowOnLogin>
-                <ShowOnLogout>
-                  <NavLink to="/login">Login</NavLink>
-                </ShowOnLogout>
-                <div>
-                  <NavLink to="/contact">Contact</NavLink>
-                </div>
                 <NavLink to="/plans">Plans</NavLink>
                 <NavLink to="/about">About</NavLink>
+                <NavLink to="/contact">Contact</NavLink>
                 <NavLink to="/how-it-works">Workflow</NavLink>
                 <NavLink to="/hierarchy">Hierarchy</NavLink>
                 <ShowOnLogin>
                   <NavLink to="/user-profile">Profile</NavLink>
                 </ShowOnLogin>
               </div>
+              <ShowOnLogout>
+                <div className="buttonDivs">
+                  <NavLink to="/login">Login</NavLink>
+                </div>
+              </ShowOnLogout>
               <ShowOnLogin>
                 <div className="buttonDivs">
                   <button onClick={logoutUser}>Logout</button>

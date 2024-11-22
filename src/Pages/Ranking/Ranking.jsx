@@ -5,7 +5,6 @@ import Diamond from "../../Assets/diamondMedal.png";
 import PlatinumMedal from "../../Assets/platinumMedal.png";
 import "./Ranking.css";
 import Footer from "../../components/Footer/Footer";
-import BackToTop from "../../BackToTop/BackToTop";
 
 
 const Ranking = () => {
@@ -70,7 +69,6 @@ const Ranking = () => {
         </div>
       </div>
       <Footer />
-      <BackToTop />
     </>
   );
 };

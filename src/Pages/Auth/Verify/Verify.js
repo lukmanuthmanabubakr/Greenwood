@@ -15,37 +15,33 @@ const Verify = () => {
   const { isLoading } = useSelector((state) => state.auth);
 
   const verifyAccount = async () => {
-    // Dispatch the verification action
+    setTimeout(() => {
+      navigate("/dashboard");
+    }, 3000);
     await dispatch(verifyUser(verificationToken));
     await dispatch(RESET());
-
-    // Navigate to the dashboard
-    navigate("/dashboard");
-
-    // Refresh the page after navigation
-    setTimeout(() => {
-      window.location.reload();
-    }, 0); // Immediate refresh
   };
 
   return (
-    <div className="verifyAccount-container">
-      <div className="verifyAccount-card">
-        <FaCheckCircle className="verify-icon animated-icon" />
-        <h2>Account Verification!</h2>
-        <p>
-          Your account will be verified, once you click the button below to
-          proceed!
-        </p>
-        <ButtonLoader
-          onClick={verifyAccount}
-          className="verify-button"
-          isLoading={isLoading}
-        >
-          Verify Email
-        </ButtonLoader>
+    <>
+      <div className="verifyAccount-container">
+        <div className="verifyAccount-card">
+          <FaCheckCircle className="verify-icon animated-icon" />
+          <h2>Account Verified!</h2>
+          <p>
+            Your account has been successfully verified. Click the button below
+            to proceed!
+          </p>
+          <ButtonLoader
+            onClick={verifyAccount}
+            className="verify-button"
+            isLoading={isLoading}
+          >
+            Proceed to Dashboard
+          </ButtonLoader>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

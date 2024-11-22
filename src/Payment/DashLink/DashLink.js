@@ -10,15 +10,15 @@ import PaymentLoader from '../PaymentLoader/PaymentLoader';
 
 const DashLink = () => {
   // Get states from the Redux store
-  // const { user } = useSelector((state) => state.auth);
-  // const isVerified = user?.isVerified;
+  const { user } = useSelector((state) => state.auth);
+  const isVerified = user?.isVerified;
 
   useRedirectLoggedOutUser("/login");
 
 
   return (
     <>
-      {/* {isVerified === false && <Notification />} */}
+      {isVerified === false && <Notification />}
       <div className='dashLinks'>
         <MainDashBoard />
         <Advert />

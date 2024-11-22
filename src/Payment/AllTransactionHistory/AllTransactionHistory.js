@@ -3,8 +3,9 @@ import axios from "axios";
 import "./AllTransactionHistory.css";
 import useRedirectLoggedOutUser from "../../customHook/useRedirectLoggedOutUser";
 
+
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const GET_ALL_TRANSACTIONS = `${BACKEND_URL}api/invest`;
+const All_TRANSACTIONS = `${BACKEND_URL}api/invest`;
 
 const AllTransactionHistory = () => {
   const [history, setHistory] = useState([]);
@@ -38,7 +39,7 @@ const AllTransactionHistory = () => {
 
   useEffect(() => {
     axios
-      .get(`${GET_ALL_TRANSACTIONS}/getTransactionHistory`)
+      .get(`${All_TRANSACTIONS}/getTransactionHistory`)
       .then((response) => {
         const { history } = response.data;
 

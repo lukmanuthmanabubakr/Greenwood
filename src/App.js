@@ -35,6 +35,7 @@ import { AdminAuthorLink } from "./components/protect/hiddenLink";
 import StartInvestment from "./Payment/StartInvestment/StartInvestment";
 import InvestmentStatus from "./Payment/InvestmentStatus/InvestmentStatus";
 import InvestmentDetail from "./Payment/InvestmentDetail/InvestmentDetail";
+import UploadForm from "./UploadForm";
 import Referrals from "./Payment/Referrals/Referrals";
 import AllTransactionHistory from "./Payment/AllTransactionHistory/AllTransactionHistory";
 import NotFound from "./Pages/NotFound/NotFound";
@@ -71,6 +72,7 @@ const App = () => {
           <Route path="/how-it-works" element={<WorkFlow />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
+          <Route path="/upload" element={<UploadForm />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<SignUp />} />
           <Route path="/dashboard" element={<Dashboard />} />

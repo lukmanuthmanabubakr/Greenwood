@@ -72,7 +72,7 @@ const OurCustomers = () => {
         <p className="icon">
           <IoStatsChart />
         </p>
-        <p className="count">${totalInvestment}+</p>
+        <p className="count">{totalInvestment}+</p>
         <p className="label">Total Investment</p>
       </div>
       <div className="customerCard" data-aos="fade-up" data-aos-duration="3000">

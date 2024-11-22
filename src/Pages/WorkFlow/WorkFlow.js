@@ -8,7 +8,6 @@ import { FaCoins } from "react-icons/fa6";
 import { GiReceiveMoney } from "react-icons/gi";
 import { FaUserFriends } from "react-icons/fa";
 import Footer from "../../components/Footer/Footer";
-import BackToTop from "../../BackToTop/BackToTop";
 
 
 const WorkFlow = () => {
@@ -74,7 +73,6 @@ const WorkFlow = () => {
         </div>
       </div>
       <Footer />
-      <BackToTop />
     </>
   );
 };

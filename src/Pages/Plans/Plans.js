@@ -8,7 +8,6 @@ import Platinum from "../../Assets/Platinum-plans.jpeg";
 import "./Plans.css";
 import Footer from "../../components/Footer/Footer";
 import { NavLink } from "react-router-dom";
-import BackToTop from "../../BackToTop/BackToTop";
 
 
 const plansData = [
@@ -19,7 +18,7 @@ const plansData = [
     features: [
       "Access to basic features",
       "Standard customer support",
-      "Complete your investment within 24 hours",
+      "Up to 2 transactions per month",
     ],
     description: "Perfect for individuals starting their investment journey.",
   },
@@ -30,7 +29,7 @@ const plansData = [
     features: [
       "Everything in Starter Plan",
       "Priority customer support",
-      "Complete your investment within 48 hours",
+      "Up to 5 transactions per month",
       "Access to educational content",
     ],
     description: "For those who want a bit more flexibility and support.",
@@ -42,7 +41,7 @@ const plansData = [
     features: [
       "Everything in Bronze Plan",
       "Increased transaction limits",
-      "Complete your investment within 72 hours",
+      "Customizable dashboard",
       "Exclusive market analysis",
     ],
     description:
@@ -55,7 +54,7 @@ const plansData = [
     features: [
       "Everything in Silver Plan",
       "Dedicated account manager",
-      "Complete your investment within 96 hours",
+      "Unlimited transactions",
       "Personalized investment advice",
     ],
     description:
@@ -68,7 +67,7 @@ const plansData = [
     features: [
       "Everything in Gold Plan",
       "Premium market insights",
-      "Complete your investment within 120 hours",
+      "Access to expert webinars",
       "24/7 premium customer support",
     ],
     description:
@@ -80,7 +79,7 @@ const plansData = [
     price: "$50,000 - $100,000",
     features: [
       "Everything in Diamond Plan",
-      "Complete your investment within 144 hours",
+      "Exclusive partnership opportunities",
       "Tailored investment strategies",
       "Personalized wealth management",
     ],
@@ -114,7 +113,6 @@ const Plans = () => {
         </div>
       </div>
       <Footer />
-      <BackToTop />
     </>
   );
 };
