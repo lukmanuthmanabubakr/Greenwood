@@ -120,7 +120,7 @@ const UserProfile = () => {
 
   return (
     <>
-    {!isLoading && profile.isVerified === false && <Notification />}
+    {/* {!isLoading && profile.isVerified === false && <Notification />} */}
     <div className="userProfile-container">
         <h2 className="profile-header">User Profile</h2>
         {user && (
