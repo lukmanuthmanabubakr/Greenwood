@@ -23,15 +23,11 @@ const Profile = () => {
     setActiveContent(content);
   };
 
-  const logoutUser = async () => {
-    try {
-      await dispatch(logout()).unwrap();
-      dispatch(RESET());
-      navigate("/login");
-    } catch (error) {
-      console.error("Logout failed: ", error);
-    }
-  };
+  const logoutUser = async () =>  {
+    dispatch(RESET());
+    await dispatch(logout());
+    navigate("/login")
+};
 
   return (
     <div className="profileContainer">
