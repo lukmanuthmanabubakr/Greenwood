@@ -21,11 +21,17 @@ const Navbar = () => {
   const goHome = () => {
     navigate("/");
   };
-  const logoutUser = async () => {
+  // const logoutUser = async () => {
+  //   dispatch(RESET());
+  //   await dispatch(logout());
+  //   navigate("/login");
+  // };
+
+  const logoutUser = async () =>  {
     dispatch(RESET());
     await dispatch(logout());
-    navigate("/login");
-  };
+    navigate("/")
+};
 
   useEffect(() => {
     const handleClickOutside = (event) => {
