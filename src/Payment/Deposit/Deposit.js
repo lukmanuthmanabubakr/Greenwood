@@ -34,7 +34,7 @@ const Deposit = ({ token }) => {
       }, 3000);
     } catch (error) {
       toast.error(error.response?.data?.message || "Error processing payment");
-    }finally {
+    } finally {
       setIsLoading(false);
     }
   };
@@ -43,26 +43,24 @@ const Deposit = ({ token }) => {
     script.src = process.env.REACT_APP_JIVOCHAT_URL;
     script.async = true;
     document.body.appendChild(script);
-  
+
     return () => {
       document.body.removeChild(script);
     };
   }, []);
-  
-
 
   return (
     <div className="container-deposit">
       <div className="instructions-section">
         <h3>Steps to Deposit</h3>
-        <p>1. Start a chart with support teams</p>
+        <p>1. Start a chat with support team</p>
         <p>2. Request to generate your private trading wallet address</p>
-        <p>3. Buy any crypto assets and send to your trading wallet address </p>
-        <p>4. Enter the amount sent to your trading wallets address in USD</p>
+        <p>3. Buy any crypto asset and send to your trading wallet address</p>
+        <p>4. Enter the amount sent to your trading wallet address in USD</p>
         <p>5. Click on "Deposit Payment"</p>
         <p>6. Wait for confirmation of your payment</p>
-        <p>7. Once you confirm your payment has been completed via email</p>
-        <p>8. Congratulations you can now start investing.</p>
+        <p>7. Once your payment is confirmed via email</p>
+        <p>8. Congratulations you can now start investing</p>
       </div>
       <div className="warning-section">
         <span>
@@ -71,7 +69,7 @@ const Deposit = ({ token }) => {
         </span>
         <div className="warning-content">
           <p>
-            Make sure the same amount of USD sent to the wallet address is
+            Ensure the same amount of USD sent to the wallet address is
             deposited below.
           </p>
         </div>
