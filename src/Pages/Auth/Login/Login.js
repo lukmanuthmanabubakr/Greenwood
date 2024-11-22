@@ -69,7 +69,7 @@ const Login = () => {
   }, [isLoggedIn, isSuccess, dispatch, navigate, isError, twoFactor, email]);
 
   const googleLogin = async (credentialResponse) => {
-    console.log(credentialResponse);
+    // console.log(credentialResponse);
     await dispatch(
       loginWithGoogle({ userToken: credentialResponse.credential })
     );

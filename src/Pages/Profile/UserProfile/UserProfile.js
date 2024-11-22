@@ -85,7 +85,7 @@ const UserProfile = () => {
           { method: "post", body: image }
         );
         const imgData = await response.json();
-        console.log(imgData);
+        // console.log(imgData);
         imageURL = imgData.url.toString();
       }
       // Save profile to MongoDB
