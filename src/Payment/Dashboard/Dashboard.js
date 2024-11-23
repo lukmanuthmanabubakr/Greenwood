@@ -1,17 +1,19 @@
 import React, { useState } from "react";
 import "./Dashboard.css";
-import MainDashBoard from "../MainDashBoard/MainDashBoard";
-import { BiMenuAltLeft } from "react-icons/bi";
-import { TbLayoutDashboardFilled } from "react-icons/tb";
-import { FaHome, FaInfoCircle, FaServicestack, FaPhoneAlt } from "react-icons/fa";
+import Notification from '../../components/Notification/Notification';
 import DashLink from "../DashLink/DashLink";
 import useRedirectLoggedOutUser from "../../customHook/useRedirectLoggedOutUser";
+import { useSelector } from "react-redux";
 
 const Dashboard = () => {
+  const { user } = useSelector((state) => state.auth);
+  const isVerified = user?.isVerified;
+
   useRedirectLoggedOutUser("/login");
   return (
     <div className="dashContainer">
-        <DashLink />
+      {isVerified === false && <Notification />}
+      <DashLink />
     </div>
   );
 };
