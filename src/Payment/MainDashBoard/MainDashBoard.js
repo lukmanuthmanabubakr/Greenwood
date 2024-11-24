@@ -117,11 +117,11 @@ const MainDashBoard = () => {
                 )}
               </p>
             </span>
-            {/* <span
+            <span
               className="depoSpan"
               onClick={() => setShowMaturityAmount(!showMaturityAmount)}
             >
-              <p className="dBal">Total Profit Collected</p>
+              <p className="dBal">Total Profit</p>
               <p className="mBal">
                 {loading ? (
                   <DashLoader />
@@ -129,7 +129,7 @@ const MainDashBoard = () => {
                   `$${formatMaturitytBalance(totalMaturityAmount)}`
                 )}
               </p>
-            </span> */}
+            </span>
           </div>
         </div>
       </div>
