@@ -117,7 +117,7 @@ const MainDashBoard = () => {
                 )}
               </p>
             </span>
-            <span
+            {/* <span
               className="depoSpan"
               onClick={() => setShowMaturityAmount(!showMaturityAmount)}
             >
@@ -129,7 +129,7 @@ const MainDashBoard = () => {
                   `$${formatMaturitytBalance(totalMaturityAmount)}`
                 )}
               </p>
-            </span>
+            </span> */}
           </div>
         </div>
       </div>
