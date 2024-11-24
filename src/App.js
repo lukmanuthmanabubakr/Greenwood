@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Navbar from "./components/Navbar/Navbar";
 import "./index.css";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import Home from "./Pages/Home/Home";
 import Login from "./Pages/Auth/Login/Login";
 import SignUp from "./Pages/Auth/SignUp/SignUp";
@@ -50,12 +50,26 @@ const App = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const user = useSelector(selectUser);
 
-  useEffect(() => {
-    dispatch(getLoginStatus());
-    if (isLoggedIn && user === null) {
-      dispatch(getUser());
-    }
-  }, [dispatch, isLoggedIn, user]);
+  const ProtectedRoute = ({ children }) => {
+    const isLoggedIn = useSelector(selectIsLoggedIn);
+    const navigate = useNavigate();
+  
+    useEffect(() => {
+      if (!isLoggedIn) {
+        navigate("/login");
+      }
+    }, [isLoggedIn, navigate]);
+  
+    return isLoggedIn ? children : null;
+  };
+  
+
+  // useEffect(() => {
+  //   dispatch(getLoginStatus());
+  //   if (isLoggedIn && user === null) {
+  //     dispatch(getUser());
+  //   }
+  // }, [dispatch, isLoggedIn, user]);
   return (
     <div className="App">
       <Navbar />
@@ -72,7 +86,7 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<SignUp />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/dashboard" element={<ProtectedRoute><Dashboard /> </ProtectedRoute>} />
           <Route path="/referrals" element={<Referrals />} />
           <Route path="/transaction-History" element={<AllTransactionHistory />} />
           <Route path="/deposit-payment" element={<Deposit />} />
