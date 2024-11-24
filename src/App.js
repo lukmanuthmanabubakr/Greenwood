@@ -50,26 +50,12 @@ const App = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const user = useSelector(selectUser);
 
-  const ProtectedRoute = ({ children }) => {
-    const isLoggedIn = useSelector(selectIsLoggedIn);
-    const navigate = useNavigate();
-  
-    useEffect(() => {
-      if (!isLoggedIn) {
-        navigate("/login");
-      }
-    }, [isLoggedIn, navigate]);
-  
-    return isLoggedIn ? children : null;
-  };
-  
-
-  // useEffect(() => {
-  //   dispatch(getLoginStatus());
-  //   if (isLoggedIn && user === null) {
-  //     dispatch(getUser());
-  //   }
-  // }, [dispatch, isLoggedIn, user]);
+  useEffect(() => {
+    dispatch(getLoginStatus());
+    if (isLoggedIn && user === null) {
+      dispatch(getUser());
+    }
+  }, [dispatch, isLoggedIn, user]);
   return (
     <div className="App">
       <Navbar />
@@ -86,7 +72,7 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<SignUp />} />
-          <Route path="/dashboard" element={<ProtectedRoute><Dashboard /> </ProtectedRoute>} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/referrals" element={<Referrals />} />
           <Route path="/transaction-History" element={<AllTransactionHistory />} />
           <Route path="/deposit-payment" element={<Deposit />} />
