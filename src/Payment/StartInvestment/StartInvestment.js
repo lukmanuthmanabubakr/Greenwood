@@ -41,15 +41,21 @@ const StartInvestment = ({ token }) => {
     fetchBalance();
   }, [token]);
 
+  // const formatBalance = (balance) => {
+  //   if (balance >= 1_000_000) {
+  //     return `${(balance / 1_000_000).toFixed(1).replace(/\.0$/, "")}M+`;
+  //   } else if (balance >= 1_000) {
+  //     return `${(balance / 1_000).toFixed(1).replace(/\.0$/, "")}k+`;
+  //   } else {
+  //     return balance.toLocaleString();
+  //   }
+  // };
+
+
   const formatBalance = (balance) => {
-    if (balance >= 1_000_000) {
-      return `${(balance / 1_000_000).toFixed(1).replace(/\.0$/, "")}M+`;
-    } else if (balance >= 1_000) {
-      return `${(balance / 1_000).toFixed(1).replace(/\.0$/, "")}k+`;
-    } else {
-      return balance.toLocaleString();
-    }
+    return balance.toLocaleString();
   };
+
 
   useEffect(() => {
     const fetchPlans = async () => {
