@@ -22,45 +22,58 @@ const MainDashBoard = () => {
   const [showMaturityAmount, setShowMaturityAmount] = useState(true);
   const [loading, setLoading] = useState(true);
 
+  // const formatBalance = (balance) => {
+  //   if (balance >= 1_000_000) {
+  //     return `${(balance / 1_000_000).toFixed(1).replace(/\.0$/, "")}M+`;
+  //   } else if (balance >= 100_000) {
+  //     return `${Math.floor(balance / 1_000).toLocaleString()}k`;
+  //   } else if (balance >= 1_000) {
+  //     return `${(balance / 1_000).toFixed(1).replace(/\.0$/, "")}k+`;
+  //   } else {
+  //     return balance.toLocaleString();
+  //   }
+  // };
+
+  // const formatInvestBalance = (InvestmentBal) => {
+  //   if (InvestmentBal >= 1_000_000) {
+  //     return `${(InvestmentBal / 1_000_000).toFixed(1).replace(/\.0$/, "")}M+`;
+  //   } else if (InvestmentBal >= 100_000) {
+  //     return `${Math.floor(InvestmentBal / 1_000).toLocaleString()}k`;
+  //   } else if (InvestmentBal >= 1_000) {
+  //     return `${(InvestmentBal / 1_000).toFixed(1).replace(/\.0$/, "")}k+`;
+  //   } else {
+  //     return InvestmentBal.toLocaleString();
+  //   }
+  // };
+
+  // const formatMaturitytBalance = (totalMaturityAmount) => {
+  //   if (totalMaturityAmount >= 1_000_000) {
+  //     return `${(totalMaturityAmount / 1_000_000)
+  //       .toFixed(1)
+  //       .replace(/\.0$/, "")}M+`;
+  //   } else if (totalMaturityAmount >= 100_000) {
+  //     return `${Math.floor(totalMaturityAmount / 1_000).toLocaleString()}k`;
+  //   } else if (totalMaturityAmount >= 1_000) {
+  //     return `${(totalMaturityAmount / 1_000)
+  //       .toFixed(1)
+  //       .replace(/\.0$/, "")}k+`;
+  //   } else {
+  //     return totalMaturityAmount.toLocaleString();
+  //   }
+  // };
+
   const formatBalance = (balance) => {
-    if (balance >= 1_000_000) {
-      return `${(balance / 1_000_000).toFixed(1).replace(/\.0$/, "")}M+`;
-    } else if (balance >= 100_000) {
-      return `${Math.floor(balance / 1_000).toLocaleString()}k`;
-    } else if (balance >= 1_000) {
-      return `${(balance / 1_000).toFixed(1).replace(/\.0$/, "")}k+`;
-    } else {
-      return balance.toLocaleString();
-    }
+    return balance.toLocaleString();
   };
-
+  
   const formatInvestBalance = (InvestmentBal) => {
-    if (InvestmentBal >= 1_000_000) {
-      return `${(InvestmentBal / 1_000_000).toFixed(1).replace(/\.0$/, "")}M+`;
-    } else if (InvestmentBal >= 100_000) {
-      return `${Math.floor(InvestmentBal / 1_000).toLocaleString()}k`;
-    } else if (InvestmentBal >= 1_000) {
-      return `${(InvestmentBal / 1_000).toFixed(1).replace(/\.0$/, "")}k+`;
-    } else {
-      return InvestmentBal.toLocaleString();
-    }
+    return InvestmentBal.toLocaleString();
   };
-
+  
   const formatMaturitytBalance = (totalMaturityAmount) => {
-    if (totalMaturityAmount >= 1_000_000) {
-      return `${(totalMaturityAmount / 1_000_000)
-        .toFixed(1)
-        .replace(/\.0$/, "")}M+`;
-    } else if (totalMaturityAmount >= 100_000) {
-      return `${Math.floor(totalMaturityAmount / 1_000).toLocaleString()}k`;
-    } else if (totalMaturityAmount >= 1_000) {
-      return `${(totalMaturityAmount / 1_000)
-        .toFixed(1)
-        .replace(/\.0$/, "")}k+`;
-    } else {
-      return totalMaturityAmount.toLocaleString();
-    }
+    return totalMaturityAmount.toLocaleString();
   };
+  
 
   const userDetails = async () => {
     setLoading(true);
