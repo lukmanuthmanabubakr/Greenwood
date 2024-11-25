@@ -13,7 +13,7 @@ const SectionThree = () => {
           benefits and partner rewards, giving you even greater access to what
           matters.
         </p>
-        <NavLink to="/benefits" className="btn-link">See All Benefits</NavLink>
+        <NavLink to="/plans" className="btn-link">See All Benefits</NavLink>
       </div>
       <div className="cardContainer">
         <div className="benefitCard premiumCard">
