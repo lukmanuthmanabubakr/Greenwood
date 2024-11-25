@@ -1,5 +1,6 @@
 import React from "react";
 import { FaWhatsapp, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { FaSquareXTwitter } from "react-icons/fa6";
 import "./Footer.css";
 
 const Footer = () => {
@@ -61,8 +62,8 @@ const Footer = () => {
             >
               <FaWhatsapp />
             </a>
-            <a href="https://twitter.com" aria-label="Twitter" target="_blank">
-              <FaTwitter />
+            <a href="https://www.x.com" aria-label="Twitter" target="_blank">
+              <FaSquareXTwitter />
             </a>
             <a
               href="https://linkedin.com"
