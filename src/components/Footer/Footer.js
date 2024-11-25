@@ -1,5 +1,5 @@
 import React from "react";
-import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { FaWhatsapp, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
 import "./Footer.css";
 
 const Footer = () => {
@@ -54,16 +54,28 @@ const Footer = () => {
           <p>Phone: +1 (448) 223‑2477 </p>
           <p>Address: 123 Investment St, New York, NY 10001</p>
           <div className="social-icons">
-            <a href="https://facebook.com" aria-label="Facebook">
-              <FaFacebook />
+            <a
+              href="https://wa.me/14482232477"
+              aria-label="WhatsApp"
+              target="_blank"
+            >
+              <FaWhatsapp />
             </a>
-            <a href="https://twitter.com" aria-label="Twitter">
+            <a href="https://twitter.com" aria-label="Twitter" target="_blank">
               <FaTwitter />
             </a>
-            <a href="https://linkedin.com" aria-label="LinkedIn">
+            <a
+              href="https://linkedin.com"
+              aria-label="LinkedIn"
+              target="_blank"
+            >
               <FaLinkedin />
             </a>
-            <a href="https://instagram.com" aria-label="Instagram">
+            <a
+              href="https://instagram.com"
+              aria-label="Instagram"
+              target="_blank"
+            >
               <FaInstagram />
             </a>
           </div>
