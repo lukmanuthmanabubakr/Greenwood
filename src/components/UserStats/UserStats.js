@@ -15,10 +15,12 @@ import {
   FILTER_USERS,
   selectUsers,
 } from "../../redux/features/auth/filterSlice";
+import { useNavigate } from "react-router-dom";
 
 const UserStats = () => {
   useRedirectLoggedOutUser("/login");
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const [search, setSearch] = useState("");
   const [menuOpen, setMenuOpen] = useState({});
@@ -87,7 +89,7 @@ const UserStats = () => {
             <p>No user found...</p>
           ) : (
             filteredUsers.map((user, index) => {
-              const { _id, name, email, role, photo } = user;
+              const { _id, name, email, role, photo, balance } = user;
               return (
                 <div className="userCard" key={_id}>
                   <div className="cardHeader">
@@ -112,12 +114,19 @@ const UserStats = () => {
                         >
                           Delete User
                         </button>
+                        <button
+                          onClick={() => navigate(`/edit-balance/${_id}`)}
+                          style={{ color: "#2e8b57" }}
+                        >
+                          Edit balance
+                        </button>
                       </div>
                     )}
                   </div>
                   <div className="cardBody">
                     <h3>{shortenText(name, 12)}</h3>
                     <p>{email}</p>
+                    <p>Balance: ${balance.toLocaleString()}</p>
                     <p>Role: {role}</p>
                   </div>
                 </div>

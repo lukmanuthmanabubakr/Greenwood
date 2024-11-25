@@ -42,6 +42,7 @@ import Withdraw from "./Payment/Withdraw/Withdraw";
 import PendingWithdrawals from "./Payment/PendingWithdrawals/PendingWithdrawals";
 import ApproveWithdrawal from "./Payment/ApproveWithdrawal/ApproveWithdrawal";
 import AdminWithdrawalDetail from "./Payment/ApproveWithdrawal/ApproveWithdrawal";
+import EditBalance from "./Pages/EditBalance/EditBalance";
 
 axios.defaults.withCredentials = true;
 
@@ -82,6 +83,7 @@ const App = () => {
           <Route path="/start-invest" element={<StartInvestment />} />
           <Route path="/invest-status" element={<InvestmentStatus />} />
           <Route path="/investment/:investmentId" element={<InvestmentDetail />} />
+          <Route path="/edit-balance/:id" element={<EditBalance />} />
           <Route
             path="/transaction/:transactionId"
             element={<PaymentManagement />}
