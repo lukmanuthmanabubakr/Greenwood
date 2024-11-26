@@ -30,7 +30,7 @@ const Withdraw = ({ token }) => {
         const response = await axios.get(GET_ONE_USER, {
           headers: { Authorization: `Bearer ${token}` },
         });
-        setBalance(response.data.balance);
+        setBalance(response.data.totalMaturityAmount);
       } catch (error) {
         console.error("Error fetching balance:", error);
       }
