@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import { toast, ToastContainer } from "react-toastify";
+import { Link } from "react-router-dom"; // Import Link
 import "react-toastify/dist/ReactToastify.css";
 import "./PendingWithdrawals.css";
 
@@ -45,26 +46,31 @@ const PendingWithdrawals = () => {
         <div className="withdrawal-list">
           {withdrawals.length > 0 ? (
             withdrawals.map((withdrawal) => (
-              <div key={withdrawal._id} className="withdrawal-item">
-                <p>
-                  <strong>User:</strong> {withdrawal.user.name} (
-                  {withdrawal.user.email})
-                </p>
-                <p>
-                  <strong>Amount:</strong> $
-                  {withdrawal.amount.toLocaleString()}
-                </p>
-                <p>
-                  <strong>Requested Date:</strong>{" "}
-                  {new Date(withdrawal.requestDate).toLocaleString()}
-                </p>
-                <p>
-                  <strong>Status:</strong> {withdrawal.status}
-                </p>
-                <p>
-                  <strong>Wallet Address:</strong> {withdrawal.walletAddress}
-                </p>
-              </div>
+              <Link
+                to={`/withdrawal/${withdrawal._id}`} // Dynamic link to details page
+                key={withdrawal._id}
+                className="withdrawal-item-link" // Optional: Add class for styling
+              >
+                <div className="withdrawal-item">
+                  <p>
+                    <strong>User:</strong> {withdrawal.user.name} (
+                    {withdrawal.user.email})
+                  </p>
+                  <p>
+                    <strong>Amount:</strong> ${withdrawal.amount.toLocaleString()}
+                  </p>
+                  <p>
+                    <strong>Requested Date:</strong>{" "}
+                    {new Date(withdrawal.requestDate).toLocaleString()}
+                  </p>
+                  <p>
+                    <strong>Status:</strong> {withdrawal.status}
+                  </p>
+                  <p>
+                    <strong>Wallet Address:</strong> {withdrawal.walletAddress}
+                  </p>
+                </div>
+              </Link>
             ))
           ) : (
             <p className="no-data-text">No pending withdrawals found.</p>

@@ -9,6 +9,8 @@ import { PiPottedPlantFill } from "react-icons/pi";
 import { FaCrown } from "react-icons/fa6";
 import { IoReceipt } from "react-icons/io5";
 import { MdPending } from "react-icons/md";
+import { PiLockLaminatedOpenDuotone } from "react-icons/pi";
+
 
 
 const PaymentLinks = () => {
@@ -50,6 +52,14 @@ const PaymentLinks = () => {
             <MdPending />
           </p>
           <p className="depoPay">Pending Withdrawal</p>
+        </NavLink>
+      </AdminAuthorLink>
+      <AdminAuthorLink>
+        <NavLink to="/admin-pending-deposit">
+          <p className="iconPay">
+            <PiLockLaminatedOpenDuotone />
+          </p>
+          <p className="depoPay">Pending Deposits</p>
         </NavLink>
       </AdminAuthorLink>
       {/* <NavLink to="/deposit-payment">
