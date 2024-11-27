@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { toast } from "react-toastify";
 import { confirmPayment, getPaymentStatus } from "../apiService";
 import { useParams } from "react-router-dom";
 import "./PaymentManagement.css"; // Import the CSS file
@@ -12,13 +11,16 @@ const PaymentManagement = ({ token }) => {
   const [paymentDetails, setPaymentDetails] = useState(null);
   const [loading, setLoading] = useState(true);
   const [notes, setNotes] = useState("");
+  const [message, setMessage] = useState(""); // State for success or error message
+  const [messageType, setMessageType] = useState(""); // State for message type (success or error)
 
   const { isLoadings } = useSelector((state) => state.auth);
 
   useEffect(() => {
     const fetchPaymentStatus = async () => {
       if (!transactionId) {
-        toast.error("Transaction ID is missing!");
+        setMessageType("error");
+        setMessage("Transaction ID is missing!");
         return;
       }
 
@@ -28,7 +30,8 @@ const PaymentManagement = ({ token }) => {
         setLoading(false);
       } catch (error) {
         console.error("Error fetching payment status:", error);
-        toast.error(error.message);
+        setMessageType("error");
+        setMessage("Error fetching payment status.");
         setLoading(false);
       }
     };
@@ -40,6 +43,7 @@ const PaymentManagement = ({ token }) => {
 
   const handleConfirmPayment = async () => {
     setIsButtonLoading(true); // Start loading
+    setMessage(""); // Clear previous messages
     try {
       const status = "Confirmed";
       const response = await confirmPayment(
@@ -49,10 +53,12 @@ const PaymentManagement = ({ token }) => {
         notes
       );
 
-      toast.success(response.message);
+      setMessageType("success");
+      setMessage("Payment successfully confirmed!");
     } catch (error) {
       console.error("Error confirming payment:", error);
-      toast.error(error.message);
+      setMessageType("error");
+      setMessage("Payment has been confirmed already");
     } finally {
       setIsButtonLoading(false); // Stop loading after completion
     }
@@ -91,6 +97,11 @@ const PaymentManagement = ({ token }) => {
           >
             Confirm Payment
           </ButtonLoader>
+          {message && (
+            <p className={`message ${messageType}`}>
+              {message}
+            </p>
+          )}
         </div>
       )}
     </div>
