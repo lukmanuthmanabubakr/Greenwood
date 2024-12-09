@@ -89,7 +89,7 @@ const UserStats = () => {
             <p>No user found...</p>
           ) : (
             filteredUsers.map((user, index) => {
-              const { _id, name, email, role, photo, balance } = user;
+              const { _id, name, email, role, photo, totalMaturityAmount, balance } = user;
               return (
                 <div className="userCard" key={_id}>
                   <div className="cardHeader">
@@ -118,7 +118,7 @@ const UserStats = () => {
                           onClick={() => navigate(`/edit-balance/${_id}`)}
                           style={{ color: "#2e8b57" }}
                         >
-                          Edit balance
+                          Edit Total-profit
                         </button>
                       </div>
                     )}
@@ -127,6 +127,7 @@ const UserStats = () => {
                     <h3>{shortenText(name, 12)}</h3>
                     <p>{email}</p>
                     <p>Balance: ${balance.toLocaleString()}</p>
+                    <p>Total-profit: ${totalMaturityAmount.toLocaleString()}</p>
                     <p>Role: {role}</p>
                   </div>
                 </div>
