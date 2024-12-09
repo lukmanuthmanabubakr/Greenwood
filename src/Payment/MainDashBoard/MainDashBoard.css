@@ -23,8 +23,8 @@
   letter-spacing: 1px;
 }
 .mainDashBoard .mainDashBoardContainer .welName p {
-  font-size: 2rem;
-  font-weight: 600;
+  font-size: 1.8rem;
+  font-weight: 500;
   color: var(--dashboard-name);
 }
 .mainDashBoard .mainDashBoardContainer .balance {
