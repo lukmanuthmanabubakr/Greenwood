@@ -6,6 +6,8 @@ import PaymentLoader from "../PaymentLoader/PaymentLoader";
 import useRedirectLoggedOutUser from "../../customHook/useRedirectLoggedOutUser";
 import { NameOfUser } from "../../Pages/Profile/UserProfile/UserProfile";
 import DashLoader from "../DashLoader/DashLoader";
+import { selectUser } from "../../redux/features/auth/authSlice";
+import { useSelector } from "react-redux";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 export const GET_ONE_USER = `${BACKEND_URL}api/users`;
@@ -21,6 +23,9 @@ const MainDashBoard = () => {
   const [showInvestmentBal, setShowInvestmentBal] = useState(true);
   const [showMaturityAmount, setShowMaturityAmount] = useState(true);
   const [loading, setLoading] = useState(true);
+
+  const user = useSelector(selectUser);
+
 
   // const formatBalance = (balance) => {
   //   if (balance >= 1_000_000) {
@@ -105,7 +110,8 @@ const MainDashBoard = () => {
         <div className="mainDashBoardContainer">
           <div className="welName">
             <h2>Welcome Back,</h2>
-            <p>{loading ? <DashLoader /> : <NameOfUser />}</p>
+            <p className="smallScreen">{loading ? <DashLoader /> : <NameOfUser />}</p>
+            <p className="maxScreen">{loading ? <DashLoader /> : user?.name}</p>
           </div>
           <div className="balance">
             <span

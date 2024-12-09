@@ -203,7 +203,7 @@ export const NameOfUser = () => {
 
   const username = user?.name || "...";
 
-  return <p className="nameOfUserProfle">{shortenText(username, 18)}</p>;
+  return <p className="nameOfUserProfle">{shortenText(username, 10)}</p>;
 };
 
 export const UserImage = () => {
