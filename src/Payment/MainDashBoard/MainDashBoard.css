@@ -95,18 +95,11 @@
     color: var(--dashboard-h2);
     letter-spacing: 1px;
   }
-  .mainDashBoard .mainDashBoardContainer .welName p {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--dashboard-name);
-    letter-spacing: 1px;
-  }
-
   .mainDashBoard .mainDashBoardContainer .welName .maxScreen{
    display: none;
   }
   .mainDashBoard .mainDashBoardContainer .welName .smallScreen{
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     font-weight: 500;
     color: var(--dashboard-name);
     display: flex;
@@ -115,14 +108,17 @@
 @media only screen and (max-width: 320px) {
   .mainDashBoard .mainDashBoardContainer .welName h2 {
     font-size: 1.2rem;
-    font-weight: 400;
+    font-weight: 300;
     color: var(--dashboard-h2);
     letter-spacing: 1px;
   }
-  .mainDashBoard .mainDashBoardContainer .welName p {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--dashboard-name);
-    letter-spacing: 1px;
-  }
+  .mainDashBoard .mainDashBoardContainer .welName .maxScreen{
+    display: none;
+   }
+   .mainDashBoard .mainDashBoardContainer .welName .smallScreen{
+     font-size: 1.1rem;
+     font-weight: 400;
+     color: var(--dashboard-name);
+     display: flex;
+   }
 }
