@@ -87,6 +87,21 @@
     grid-template-columns: 1fr;
     gap: 1rem;
   }
+  .mainDashBoard .mainDashBoardContainer .welName h2 {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: var(--dashboard-h2);
+    letter-spacing: 1px;
+  }
+  .mainDashBoard .mainDashBoardContainer .welName .maxScreen{
+    display: none;
+   }
+   .mainDashBoard .mainDashBoardContainer .welName .smallScreen{
+     font-size: 1.1rem;
+     font-weight: 400;
+     color: var(--dashboard-name);
+     display: flex;
+   }
 }
 @media only screen and (max-width: 380px) {
   .mainDashBoard .mainDashBoardContainer .welName h2 {
