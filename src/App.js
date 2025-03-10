@@ -22,6 +22,7 @@ import {
   selectUser,
 } from "./redux/features/auth/authSlice";
 import { GoogleOAuthProvider } from "@react-oauth/google";
+import GetAllPendingInvestment from "./Payment/GetAllPendingInvestment/GetAllPendingInvestment";
 import Plans from "./Pages/Plans/Plans";
 import Ranking from "./Pages/Ranking/Ranking";
 import WorkFlow from "./Pages/WorkFlow/WorkFlow";
@@ -44,6 +45,9 @@ import ApproveWithdrawal from "./Payment/ApproveWithdrawal/ApproveWithdrawal";
 import AdminWithdrawalDetail from "./Payment/ApproveWithdrawal/ApproveWithdrawal";
 import EditBalance from "./Pages/EditBalance/EditBalance";
 import GetAllPendingDeposit from "./Payment/GetAllPendingDeposit/GetAllPendingDeposit";
+import UploadKyc from "./Pages/UploadKyc/UploadKyc";
+import AdminPendingKyc from "./Pages/AdminPendingKyc/AdminPendingKyc";
+import UserBalEditted from "./Pages/UserBalEditted/UserBalEditted";
 
 axios.defaults.withCredentials = true;
 
@@ -75,6 +79,8 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<SignUp />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/upload-kyc" element={<UploadKyc />} />
+          <Route path="/pending-kyc" element={<AdminPendingKyc />} />
           <Route path="/referrals" element={<Referrals />} />
           <Route path="/transaction-History" element={<AllTransactionHistory />} />
           <Route path="/deposit-payment" element={<Deposit />} />
@@ -85,7 +91,10 @@ const App = () => {
           <Route path="/invest-status" element={<InvestmentStatus />} />
           <Route path="/investment/:investmentId" element={<InvestmentDetail />} />
           <Route path="/edit-balance/:id" element={<EditBalance />} />
+          <Route path="/edit-user-balance/:id" element={<UserBalEditted />} />
           <Route path="/admin-pending-deposit" element={<GetAllPendingDeposit />} />
+
+          <Route path="/admin-pending-investment" element={<GetAllPendingInvestment />} />
           <Route
             path="/transaction/:transactionId"
             element={<PaymentManagement />}

@@ -14,18 +14,24 @@ import {
 } from "../../../redux/features/auth/authSlice";
 import ButtonLoader from "../../../components/ButtonLoader/ButtonLoader";
 
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const COUNTRY = `${BACKEND_URL}api/countries`;
+
 const initialState = {
   name: "",
   email: "",
   password: "",
+  phone: "",
   confirmPassword: "",
   referralCode: "",
+  country: "",
 };
 
 const SignUp = () => {
   const [formData, setFormData] = useState(initialState);
+  const [countries, setCountries] = useState([]); // State to store countries
 
-  const { name, email, password, confirmPassword, referralCode } = formData;
+  const { name, email, password, confirmPassword, referralCode, phone, country } = formData;
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -53,6 +59,21 @@ const SignUp = () => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
+
+  useEffect(() => {
+    // Fetch countries from the API
+    const fetchCountries = async () => {
+      try {
+        const response = await fetch(`${COUNTRY}`);
+        const data = await response.json();
+        setCountries(data); // Set the fetched countries
+      } catch (error) {
+        toast.error("Failed to fetch countries. Please try again later.");
+      }
+    };
+
+    fetchCountries();
+  }, []);
 
   useEffect(() => {
     // Check Lower and Uppercase
@@ -100,7 +121,9 @@ const SignUp = () => {
       name,
       email,
       password,
+      phone,
       referralCode,
+      country, // Include the selected country
     };
 
     // console.log(userData);
@@ -110,7 +133,7 @@ const SignUp = () => {
 
   useEffect(() => {
     if (isSuccess && isLoggedIn) {
-      navigate("/dashboard");
+      navigate("/upload-kyc");
     }
 
     dispatch(RESET());
@@ -143,6 +166,15 @@ const SignUp = () => {
               onChange={handleInputChange}
               className="emailInput"
             />
+           <input
+              type="phone"
+              placeholder="(phone)+12345678901"
+              required
+              name="phone"
+              value={phone}
+              onChange={handleInputChange}
+              className="emailInput"
+            />
             <input
               type="text"
               placeholder="Referral code (Optional)"
@@ -151,6 +183,20 @@ const SignUp = () => {
               onChange={handleInputChange}
               className="referInput"
             />
+            <select
+              name="country"
+              required
+              value={country}
+              onChange={handleInputChange}
+              className="countryInput"
+            >
+              <option value="">Select Country</option>
+              {countries.map((country) => (
+                <option key={country.code} value={country.name}>
+                  {country.name}
+                </option>
+              ))}
+            </select>
             <PasswordInput
               placeholder="Password"
               name="password"
