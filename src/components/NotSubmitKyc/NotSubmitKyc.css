@@ -83,8 +83,8 @@
   /* Upload KYC Button as NavLink */
   .kyc-button {
     display: inline-block;
-    background: var(--blue-dark);
-    color: var(--text-light);
+    background: var(--nav-btns-bg);
+    color: var(--nav-btns-text);
     padding: 12px 20px;
     border-radius: 6px;
     font-size: 16px;
