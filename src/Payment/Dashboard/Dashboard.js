@@ -10,16 +10,16 @@ import RejectedKyc from "../../components/RejectedKyc/RejectedKyc";
 const Dashboard = () => {
   const { user } = useSelector((state) => state.auth);
   const isVerified = user?.isVerified;
-  const kycNotSubmitted = user?.kycStatus;
-  const kycPending = user?.kycStatus;
+  // const kycNotSubmitted = user?.kycStatus;
+  // const kycPending = user?.kycStatus;
 
   useRedirectLoggedOutUser("/login");
   return (
     <div className="dashContainer">
       {isVerified === false && <Notification />}
-      {kycNotSubmitted === "Not Submitted" && <NotSubmitKyc />}
+      {/* {kycNotSubmitted === "Not Submitted" && <NotSubmitKyc />}
       {kycPending === "Pending" && <KycPending />}
-      {kycPending === "Rejected" && <RejectedKyc />}
+      {kycPending === "Rejected" && <RejectedKyc />} */}
       <DashLink />
     </div>
   );

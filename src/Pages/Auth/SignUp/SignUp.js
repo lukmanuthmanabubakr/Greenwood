@@ -133,7 +133,7 @@ const SignUp = () => {
 
   useEffect(() => {
     if (isSuccess && isLoggedIn) {
-      navigate("/upload-kyc");
+      navigate("/dashboard");
     }
 
     dispatch(RESET());
