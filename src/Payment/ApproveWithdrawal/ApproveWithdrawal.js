@@ -9,6 +9,7 @@ import useRedirectLoggedOutUser from "../../customHook/useRedirectLoggedOutUser"
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const WITHDRAW_ONE_USER = `${BACKEND_URL}api/withDraw/get-withdrawal`;
 const APPROVAL = `${BACKEND_URL}api/withDraw/approve`;
+const REJECTED = `${BACKEND_URL}api/withDraw/reject`;
 
 const WithdrawalDetails = () => {
   const { id } = useParams();
@@ -23,6 +24,11 @@ const WithdrawalDetails = () => {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
         });
+
+        if (!data || typeof data.amount === "undefined") {
+          throw new Error("Invalid API response structure.");
+        }
+
         setWithdrawal(data);
       } catch (err) {
         const message = "Failed to fetch withdrawal details.";
@@ -36,10 +42,12 @@ const WithdrawalDetails = () => {
 
   useRedirectLoggedOutUser("/login");
 
-  const [isButtonLoading, setIsButtonLoading] = useState(false);
+  // Separate loading states for approve and reject
+  const [isApproveButtonLoading, setIsApproveButtonLoading] = useState(false);
+  const [isRejectButtonLoading, setIsRejectButtonLoading] = useState(false);
 
   const handleApprove = async () => {
-    setIsButtonLoading(true);
+    setIsApproveButtonLoading(true);
     try {
       await axios.put(
         `${APPROVAL}/${id}`,
@@ -56,40 +64,77 @@ const WithdrawalDetails = () => {
       const message = "Failed to approve withdrawal.";
       setError(message);
       toast.error(message);
-    }finally {
-      setIsButtonLoading(false); // Stop loading after completion
+    } finally {
+      setIsApproveButtonLoading(false);
+    }
+  };
+
+  const handleReject = async () => {
+    setIsRejectButtonLoading(true);
+    try {
+      await axios.put(
+        `${REJECTED}/${id}`,
+        {},
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
+      toast.success("Withdrawal rejected!");
+      setWithdrawal((prev) => ({ ...prev, status: "Rejected" }));
+    } catch (err) {
+      const message = "Failed to reject withdrawal.";
+      setError(message);
+      toast.error(message);
+    } finally {
+      setIsRejectButtonLoading(false);
     }
   };
 
   if (error) return <p className="error-message">{error}</p>;
   if (!withdrawal) return <p className="loading-message">Loading...</p>;
 
+  const amount = withdrawal.amount ? Number(withdrawal.amount) : null;
 
   return (
     <div className="withdrawal-details">
       <h1 className="title">Withdrawal Details</h1>
       <div className="withdrawal-info">
         <p>
-          <strong>User:</strong> {withdrawal.user}
+          <strong>User:</strong> {withdrawal.user || "N/A"}
         </p>
         <p>
-          <strong>Amount:</strong> ${withdrawal.amount.toLocaleString()}
+          <strong>Amount:</strong> ${amount !== null ? amount.toLocaleString() : "N/A"}
         </p>
         <p>
-          <strong>Wallet Address:</strong> {withdrawal.walletAddress}
+          <strong>Wallet Address:</strong> {withdrawal.walletAddress || "N/A"}
         </p>
         <p>
-          <strong>Status:</strong> {withdrawal.status}
+          <strong>Status:</strong> {withdrawal.status || "N/A"}
         </p>
         <p>
           <strong>Request Date:</strong>{" "}
-          {new Date(withdrawal.requestDate).toLocaleString()}
+          {withdrawal.requestDate ? new Date(withdrawal.requestDate).toLocaleString() : "N/A"}
         </p>
       </div>
       {withdrawal.status === "Pending" && (
-        <ButtonLoader isLoading={isButtonLoading} className="approve-button" onClick={handleApprove}>
-          Approve
-        </ButtonLoader>
+        <div className="button-group">
+          <ButtonLoader
+            isLoading={isApproveButtonLoading}
+            className="approve-button"
+            onClick={handleApprove}
+          >
+            Approve
+          </ButtonLoader>
+          <ButtonLoader
+            isLoading={isRejectButtonLoading}
+            className="reject-button"
+            onClick={handleReject}
+          >
+            Reject
+          </ButtonLoader>
+        </div>
       )}
     </div>
   );
