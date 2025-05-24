@@ -65,8 +65,8 @@ const App = () => {
   }, [dispatch, isLoggedIn, user]);
   return (
     <div className="App">
-    <ReversedPage />
-      {/* <Navbar />
+    {/* <ReversedPage /> */}
+      <Navbar />
       <ToastContainer />
       <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}>
         <Routes>
@@ -125,7 +125,7 @@ const App = () => {
           <Route path="/verify/:verificationToken" element={<Verify />} />
           <Route path="/user-profile" element={<Profile />} />
         </Routes>
-      </GoogleOAuthProvider> */}
+      </GoogleOAuthProvider>
     </div>
   );
 };
