@@ -52,7 +52,7 @@ const Footer = () => {
         >
           <h2>Contact Us</h2>
           <p>Email: info@greenwoodsy.com</p>
-          <p>Phone: +1 (448) 223‑2477 </p>
+          <p>Phone: +1 (574) 298-4814</p>
           <p>Address: 123 Investment St, New York, NY 10001</p>
           <div className="social-icons">
             <a
