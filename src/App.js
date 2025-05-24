@@ -48,6 +48,7 @@ import GetAllPendingDeposit from "./Payment/GetAllPendingDeposit/GetAllPendingDe
 import UploadKyc from "./Pages/UploadKyc/UploadKyc";
 import AdminPendingKyc from "./Pages/AdminPendingKyc/AdminPendingKyc";
 import UserBalEditted from "./Pages/UserBalEditted/UserBalEditted";
+import ReversedPage from "./components/ReversedPage/ReversedPage";
 
 axios.defaults.withCredentials = true;
 
@@ -64,7 +65,8 @@ const App = () => {
   }, [dispatch, isLoggedIn, user]);
   return (
     <div className="App">
-      <Navbar />
+    <ReversedPage />
+      {/* <Navbar />
       <ToastContainer />
       <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}>
         <Routes>
@@ -82,19 +84,34 @@ const App = () => {
           <Route path="/upload-kyc" element={<UploadKyc />} />
           <Route path="/pending-kyc" element={<AdminPendingKyc />} />
           <Route path="/referrals" element={<Referrals />} />
-          <Route path="/transaction-History" element={<AllTransactionHistory />} />
+          <Route
+            path="/transaction-History"
+            element={<AllTransactionHistory />}
+          />
           <Route path="/deposit-payment" element={<Deposit />} />
           <Route path="/withdraw-wallet" element={<Withdraw />} />
           <Route path="/withdrawal/:id" element={<AdminWithdrawalDetail />} />
-          <Route path="/admin-pending-wallet" element={<PendingWithdrawals />} />
+          <Route
+            path="/admin-pending-wallet"
+            element={<PendingWithdrawals />}
+          />
           <Route path="/start-invest" element={<StartInvestment />} />
           <Route path="/invest-status" element={<InvestmentStatus />} />
-          <Route path="/investment/:investmentId" element={<InvestmentDetail />} />
+          <Route
+            path="/investment/:investmentId"
+            element={<InvestmentDetail />}
+          />
           <Route path="/edit-balance/:id" element={<EditBalance />} />
           <Route path="/edit-user-balance/:id" element={<UserBalEditted />} />
-          <Route path="/admin-pending-deposit" element={<GetAllPendingDeposit />} />
+          <Route
+            path="/admin-pending-deposit"
+            element={<GetAllPendingDeposit />}
+          />
 
-          <Route path="/admin-pending-investment" element={<GetAllPendingInvestment />} />
+          <Route
+            path="/admin-pending-investment"
+            element={<GetAllPendingInvestment />}
+          />
           <Route
             path="/transaction/:transactionId"
             element={<PaymentManagement />}
@@ -106,11 +123,9 @@ const App = () => {
           />
           <Route path="/loginWithCode/:email" element={<LoginWithCode />} />
           <Route path="/verify/:verificationToken" element={<Verify />} />
-          {/* <Route path="/user-profile" element={<UserProfile />} /> */}
           <Route path="/user-profile" element={<Profile />} />
         </Routes>
-      </GoogleOAuthProvider>
-      {/* <Loader /> */}
+      </GoogleOAuthProvider> */}
     </div>
   );
 };

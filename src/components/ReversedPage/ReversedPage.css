@@ -1,0 +1,79 @@
+/* .withdrawal-container {
+    height: 100vh;
+    background-color: var(--login-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+  }
+  
+  .withdrawal-card {
+    background-color: var(--section-2-card);
+    border-left: 6px solid var(--green-primary);
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    text-align: center;
+    color: var(--text-dark);
+  }
+  
+  .withdrawal-icon {
+    color: var(--green-dark);
+    margin-bottom: 1rem;
+  }
+  
+  .withdrawal-card h2 {
+    color: var(--green-dark);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .withdrawal-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-dark);
+  }
+   */
+
+.withdrawal-container {
+  height: 100vh;
+  background-color: var(--login-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.withdrawal-card {
+  background-color: var(--section-2-card);
+  border-left: 8px solid var(--green-primary);
+  padding: 3rem 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  color: var(--text-dark);
+}
+
+.withdrawal-icon {
+  color: var(--green-dark);
+  margin-bottom: 1.5rem;
+  font-size: 64px; /* Makes icon larger */
+}
+
+.withdrawal-card h2 {
+  color: var(--green-dark);
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.withdrawal-card p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  font-weight: 500;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}

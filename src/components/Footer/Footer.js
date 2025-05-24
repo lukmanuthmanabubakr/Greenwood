@@ -56,7 +56,7 @@ const Footer = () => {
           <p>Address: 123 Investment St, New York, NY 10001</p>
           <div className="social-icons">
             <a
-              href="https://wa.me/14482232477"
+              href="https://wa.me/15742984814"
               aria-label="WhatsApp"
               target="_blank"
             >
