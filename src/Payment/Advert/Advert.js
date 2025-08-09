@@ -4,6 +4,8 @@ import './Advert.css';
 const Advert = () => {
     const sentences = [
         "Michael invested $20,000 in the Diamond Plan.",
+        "Patricia Riley invested $6000 in Gold plan.",
+        "Leslie boosted her investment to $9,750.",
         "Emily just made a $15,000 investment in the Diamond Plan.",
         "John secured $60,000 in the Platinum Investment Plan.",
         "Sophie added $10,000 to her investment portfolio.",
